@@ -9,7 +9,7 @@ class SimConfig:
 
     n_agents: int = 200
     generations: int = 30
-    ticks_per_gen: int = 1200
+    ticks_per_gen: int = 300 #1200
 
     starting_bankroll: float = 100.0
     metabolic_cost: float = 0.1  # per tick, discourages idling
@@ -22,5 +22,6 @@ class SimConfig:
     table_max_bet: float = 20.0
     max_bet_frac_of_bankroll: float = 0.25
 
-    selection_keep_frac: float = 0.5
+    selection_keep_frac: float = 0.25 # 0.5
     mutation_std: float = 0.05  # gaussian noise on genome
+

@@ -1,43 +1,6 @@
-# =============================================
-# Project: GA Casino – Roulette MVP
-# Language: Python 3.10+
-# =============================================
-#
-# Folder layout:
-#
-# ga_casino/
-# ├─ requirements.txt
-# ├─ run.py
-# ├─ config.py
-# ├─ env/
-# │   ├─ grid.py
-# │   └─ roulette.py
-# ├─ agents/
-# │   └─ gambler.py
-# └─ evolution/
-#     └─ ga.py
-#
-# To run:
-#   python -m venv .venv && source .venv/bin/activate   (on Windows: .venv\Scripts\activate)
-#   pip install -r requirements.txt
-#   python run.py
-#
-
-# Notes:
-# - This MVP runs headless (CLI) and logs summary stats each generation.
-# - It uses a simple grid world + a single roulette table with a circular radius.
-# - Agents move randomly; if inside the table radius they must place a bet.
-# - Genome = small linear policy over simple features -> (bet type, bet fraction).
-# - GA = select top 50% by risk-adjusted return, clone+mutate to refill.
-# - Visualization: easy add later via Mesa or Matplotlib heatmaps; hooks/TODOs are marked.
-
 # ===================== requirements.txt =====================
-numpy>=1.26
-# 
+ numpy>=1.26 
 # # (Optional, for later visualization)
 mesa>=2.3.0
-# matplotlib>=3.9
-
-
-
+matplotlib>=3.9
 
