@@ -1,16 +1,18 @@
-
 # ===================== viz/server.py =====================
 from mesa.visualization import CanvasGrid, ChartModule, ModularServer
 from mesa.visualization.modules import TextElement
-from viz.model_mesa import CasinoModel, GamblerAgent
+from viz.model_mesa import CasinoModel, GamblerAgent, dist2
 from config import SimConfig
-from viz.model_mesa import dist2
+
 
 def agent_portrayal(agent):
     if isinstance(agent, GamblerAgent):
         return {"Shape": "circle", "Filled": "true", "r": 0.6, "Color": "#1f77b4", "Layer": 1}
     else:  # TableMarker
-        return {"Shape": "rect", "Filled": "true", "Layer": 0, "w": 1, "h": 1, "Color": "#e0e0e0"}
+        color = "#e0e0e0"
+        if getattr(agent, 'kind', 'roulette') == 'blackjack':
+            color = "#f2e8c9"  # light tan for BJ
+        return {"Shape": "rect", "Filled": "true", "Layer": 0, "w": 1, "h": 1, "Color": color}
 
 
 class GenReadout(TextElement):
